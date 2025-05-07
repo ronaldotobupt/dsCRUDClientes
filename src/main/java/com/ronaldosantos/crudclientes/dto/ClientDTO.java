@@ -2,20 +2,21 @@ package com.ronaldosantos.crudclientes.dto;
 
 import java.time.LocalDate;
 
-import org.springframework.beans.BeanUtils;
-
 import com.ronaldosantos.crudclientes.entities.Client;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
 
 public class ClientDTO {
 	
-	private Long id;
+private Long id;
 	
-	
+	@NotBlank(message = "Campo não pode ser em branco")
 	private String name;
 	private String cpf;
 	private Double income;
 	
-	
+	@PastOrPresent(message = "Data de nascimento não pode ser futura")
 	private LocalDate birthDate;
 	private Integer children;
 	
