@@ -33,7 +33,12 @@ public class ClientDTO {
 	}
 	
 	public ClientDTO(Client entity) {
-		BeanUtils.copyProperties(entity, this);
+		id = entity.getId();
+		name = entity.getName();
+		cpf = entity.getCpf();
+		income = entity.getIncome();
+		birthDate = entity.getBirthDate();
+		children = entity.getChildren();
 	}
 
 	public Long getId() {
